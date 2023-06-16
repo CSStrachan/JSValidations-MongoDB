@@ -1,0 +1,39 @@
+<%- include('layouts/header'); -%>
+<body>
+    <%- include('layouts/nav'); -%>
+    <section>
+        <a href="/logout">Logout</a>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Student Number</th>
+            <th>Mango Juice</th>
+            <th>Berry Juice</th>
+            <th>Apple Juice</th>
+            <th>SubTotal</th>
+            <th>Tax</th>
+            <th>Total</th>
+        </thead>
+        <tbody>
+            <%
+            for(var order of orders){
+            %>
+
+            <tr>
+                <td><%= order.name %></td>
+                <td><%= order.studentNum %></td>
+                <td><%= order.mangoJ %></td>
+                <td><%= order.berryJ %></td>
+                <td><%= order.appleJ %></td>
+                <td><%= order.subTotal %></td>
+                <td><%= order.tax %></td>
+                <td><%= order.total %></td>
+            </tr>
+            <%
+                }
+            %>
+        </tbody>
+    </table>
+</section>
+</body>
+<%- include('layouts/footer'); -%>

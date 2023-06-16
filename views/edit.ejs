@@ -1,0 +1,49 @@
+<%- include('layouts/header'); -%>
+<body>
+  <%- include('layouts/nav'); -%>
+  <section class="w50">
+    <form name="myform" method="Post" onsubmit="return formSubmit();"  action="" >
+      <label>Name</label>
+      <input id="name" placeholder="First Last" type="text" name="name" value="<%= order.name %>"><br/>
+
+      <label>Student Number</label>
+      <input id="studentNum" placeholder="123-4567" type="text" name="studentNum"  value="<%= order.studentNum %>"><br/>
+
+      <label>Mango Juice</label>
+      <input id="mangoJ" type="text" name="mangoJ"  value="<%= order.mangoJ %>" ><br/>
+
+      <label>Berry Juice</label>
+      <input id="berryJ" type="text" name="berryJ"  value="<%= order.berryJ %>" ><br/>
+
+      <label>Apple Juice</label>
+      <input id="appleJ" type="text" name="appleJ"  value="<%= order.appleJ %>" ><br/>
+
+      <label>Subtotal</label>
+      <input id="subTotal" type="text" name="subTotal"  value="<%= order.subTotal %>" ><br/>
+
+      <label>Tax</label>
+      <input id="tax" type="text" name="tax" value="<%= order.tax%> "><br>
+
+      <label>Total</label>
+      <input id="total" type="text" name="total" value="<%= order.total%> "><br>
+
+      <br/><br/>
+
+      <input type="submit" value="Update">
+      <p id="errors">
+        <% 
+          if (typeof(errors) != 'undefined')
+          {
+            for (let error of errors)
+            {
+          %>
+              <p class="errors"> <%= error.msg %></p>
+          <%
+            }
+          }
+        %>
+      </p>
+    </form>  
+</section>
+</body>
+<%- include('layouts/footer'); -%>
